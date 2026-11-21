@@ -10,7 +10,7 @@ function App() {
 
   async function loadTasks() {
     try {
-      const response = await fetch('http://127.0.0.1:8000/tasks')
+      const response = await fetch('https://smart-todo-list-3518.onrender.com/tasks')
       if (!response.ok) throw new Error('Failed to load tasks')
 
       const data = await response.json()
@@ -30,7 +30,7 @@ function App() {
     if (!task.trim()) return
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/tasks', {
+      const response = await fetch('https://smart-todo-list-3518.onrender.com/tasks, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title: task.trim() }),
@@ -70,7 +70,7 @@ async function toggleTask(id) {
   
 async function deleteTask(id) {
   try {
-    const response = await fetch(`http://127.0.0.1:8000/tasks/${id}`, {
+    const response = await fetch(`https://smart-todo-list-3518.onrender.com/tasks${id}`, {
       method: 'DELETE',
     })
 
